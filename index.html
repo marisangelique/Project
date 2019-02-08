@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Travel Geek</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Luckiest+Guy" rel="stylesheet">
+		<link rel="shortcut icon" href="images/Travel.png">
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar" class="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">Schedule</a></li>
+							<li><a href="#two">Adventure</a></li>
+							<li><a href="#three">Create a Profile</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Travel Geek</h1>
+							<p>Post and share your next adventure</p>
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly">Let's Go</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Schedule</h2>
+									<p>Flight Explorer Flight Schedule Tool lets you search all major airline flight schedules from a single location.</p>
+									<ul class="actions">
+										<li><a href="Schedule.html" class="button">Schedule Your Flight</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Hotel</h2>
+									<p>The World Luxury Hotel Awards is a recognized global organization providing luxury hotels with recognition for their world class facilities and service excellence provided to guests.</p>
+									<ul class="actions">
+										<li><a href="Hotel.html" class="button">Check The Availability</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Car Rental</h2>
+									<p>The biggest, baddest, most awesome fleet of exotic and luxury cars available for rent. Click on a vehicle for photos & details.</p>
+									<ul class="actions">
+										<li><a href="Schedule.html" class="button">Car Rental</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Adventure</h2>
+							<p>It becomes difficult to control the crazy feet, who want to explore the world to live a new life.</p>
+							<div class="features">
+								<section>
+									<span class="image fit"><img src="images/Explore 0.jpg" alt="" /></span>
+									<span class="image fit"><img src="images/Explore 1.jpg" alt="" /></span>
+									<span class="image fit"><img src="images/Explore 2.jpg" alt="" /></span>
+									<span class="image fit"><img src="images/Explore 3.jpg" alt="" /></span>
+									<span class="image fit"><img src="images/Explore 4.jpg" alt="" /></span>
+									<span class="image fit"><img src="images/Explore 5.jpg" alt="" /></span>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="Schedule.html" class="button">Explore</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Create A Profile</h2>
+							<p>Post your adventures and see other adventures around the world by creating a profile!</p>
+							<div class="split style1">
+								<section>
+									<form>
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field half">
+												<label for="email">Password</label>
+												<input type="text" name="password" id="password" />
+											</div>
+										</div>
+										<ul class="actions">
+											<button onclick="login()">Log In</button>
+											<button id="create">Sign UP</button>
+										</ul>
+										
+									</form>
+								</section>
+
+							</div>
+						</div>
+					</section>
+				<!-- Explore Page -->
+					<section id="explore" class="wrapper style1 fade-up explore" style="">
+						<div class="inner">
+							<div class="exploreWords">
+								<h2>Explore</h2>
+								<p>See where everyone is going!</p>
+							</div>
+						</div>
+					</section>
+
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved. Maris, Rob & Ricky</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/api.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+			<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+	</body>
+</html>
