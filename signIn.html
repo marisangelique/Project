@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>Sign In</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+        <link rel="shortcut icon" href="images/Travel.png">
+       <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+        
+    </head>
+    <body>
+            <header id="header">
+                <a href="index.html" class="title">Travel Geeks</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="signIn.html" class="active">Sign In</a></li>
+                        <li><a href="create.html">Create an account</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="logIn" id="logIn">
+                <h3>Travel Geeks: Log In </h3>
+                <input type="email" placeholder="Email..." id="email">
+                <input type="password" placeholder="Password..." id="password">
+
+                <button onclick="login()">Log in to Account</button>
+            </div>
+
+            <div class="loggedIn" id="loggedIn">
+                <h3>Welcome Travel Geek</h3>
+    
+                <button>Log out</button>
+            </div>
+            
+
+            <script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/api.js"></script>
+            <!-- <script src="assets/js/api.js" async defer></script> -->
+    </body>
+</html>
