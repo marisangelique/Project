@@ -3249,6 +3249,10 @@ input, select, textarea {
 			background-color: #953d75;
 		}
 
+		.wrapper.style3 {
+				flex-wrap: nowrap wrap wrap-reverse;
+		}
+
 		.wrapper.fullscreen {
 			display: -moz-flex;
 			display: -webkit-flex;
@@ -3891,11 +3895,21 @@ input, select, textarea {
 
 		}
 
-h1{
+h1, h2{
 	font-family: 'Luckiest Guy', cursive;
 }
 
 p{
 	font-family: 'Fredericka the Great', cursive;
 }
+
+.explore{
+	background: url("../../images/explore.png");
+	height: 400px;
+}
+
+.exploreWords{
+	margin-top: -40px;
+}
+
 
