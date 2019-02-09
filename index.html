@@ -2,14 +2,15 @@
 
 <html>
 	<head>
-		<title>Travel Geek</title>
+		<title>Travel Geeks</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
 		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-		<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Luckiest+Guy" rel="stylesheet">
 		<link rel="shortcut icon" href="images/Travel.png">
+		<link href="https://fonts.googleapis.com/css?family=Raleway|Staatliches" rel="stylesheet">
+
 	</head>
 	<body class="is-preload">
 
@@ -19,8 +20,8 @@
 					<nav>
 						<ul>
 							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Schedule</a></li>
-							<li><a href="#two">Adventure</a></li>
+							<li><a href="#one">Research</a></li>
+							<li><a href="#two">Schedule</a></li>
 							<li><a href="#three">Create a Profile</a></li>
 						</ul>
 					</nav>
@@ -32,28 +33,133 @@
 
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Travel Geek</h1>
+						<div class="inner welcome">
+							<h1>Travel Geeks</h1>
 							<p>Post and share your next adventure!</p>
 							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Let's Go</a></li>
+								<li><a href="#three" class="button scrolly">Create An Account</a></li>
 							</ul>
 						</div>
 					</section>
 
 				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
+					<section id="one" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Research</h2>
+							<p>Search before you travel for ideas and information about your next adventure!</p>
+							<div class="features">
+								<input id="query" value='' type="text"/>
+								<button id="search-term">Search</button>
+								<pre id="response"></pre>
+							</div>
+							<section>
+								<div id="search-results"></div>
+							</section>
+							<ul class="actions">
+								<li><a href="#two" class="button">Plan It</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Two -->
+
+					<section id="two" class="wrapper style2 spotlights">
 						<section>
 							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
 									<h2>Schedule</h2>
-									<p>Flight Explorer Flight Schedule Tool lets you search all major airline flight schedules from a single location.</p>
-									<ul class="actions">
-										<li><a href="Schedule.html" class="button">Schedule Your Flight</a></li>
-									</ul>
-								</div>
+									<p>Search for airline flight schedules from a single location.</p>
+									<div class="section" id="booking">
+											<div class="section-center">
+												<div class="container">
+													<div class="row">
+														<div class="booking-form">
+															<form>
+																<div class="row">
+																	<div class="col-md-6">
+																		<div class="form-group">
+																			<span class="form-label">Flying from</span>
+																			<input class="form-control" type="text" placeholder="City or airport" id="startPoint">
+																		</div>
+																	</div>
+																	<div class="col-md-6">
+																		<div class="form-group">
+																			<span class="form-label">Flying to</span>
+																			<input class="form-control" type="text" placeholder="City or airport" id="endPoint">
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-3">
+																		<div class="form-group">
+																			<span class="form-label">Departing</span>
+																			<input class="form-control change" type="date" required id="firstDay">
+																		</div>
+																	</div>
+																	<div class="col-md-3">
+																		<div class="form-group">
+																			<span class="form-label">Returning</span>
+																			<input class="form-control change " type="date" required id="lastDay">
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-3">
+																		<div class="form-btn">
+																			<button class="submit-btn" id="showFlights">Show flights</button>
+																		</div>
+																	</div>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+									</div>
+
+									<div id="results" class="resultsPage" style="display:none">
+											<span class="row">
+												<section class="colum">
+													<h4>Departing from </h4>
+													<div id="departResults"> 
+														<li>SFO- USA</li>
+														<li>SFO- USA</li>
+														<li>OAK- USA</li>
+													</div>
+												</section>
+												<section class="colum">
+													<h4>Departure time</h4>
+													<div id="departTime"> 
+														<li>7:00am PT</li>
+														<li>12:10pm PT</li>
+														<li>6:45pm PT</li>
+													</div>
+												</section>
+												<section class="colum">
+													<h4>Arriving to </h4>
+													<div class="arriveResults"> 
+														<li>CSL- Mexico</li>
+														<li>CSL- Mexico</li>
+														<li>CSL- Mexico</li>
+														
+													</div>
+												</section>
+												<section class="colum">
+													<h4>Arrive time </h4>
+													<div class="arriveTime"> 
+															<li>2:00pm PT</li>
+															<li>8:30pm PT</li>
+															<li>1:45am PT +1 day</li>
+													</div>
+												</section>
+											</span>
+										</div>
 							</div>
+										
+							
+									
+									
 						</section>
 						<section>
 							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
@@ -61,59 +167,106 @@
 								<div class="inner">
 									<h2>Hotel</h2>
 									<p>The World Luxury Hotel Awards is a recognized global organization providing luxury hotels with recognition for their world class facilities and service excellence provided to guests.</p>
-									<ul class="actions">
-										<li><a href="Hotel.html" class="button">Check The Availability</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Car Rental</h2>
-									<p>The biggest, baddest, most awesome fleet of exotic and luxury cars available for rent. Click on a vehicle for photos & details.</p>
-									<ul class="actions">
-										<li><a href="Schedule.html" class="button">Car Rental</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
+									<div id="bookingHotel" class="section">
+											<div class="section-center">
+												<div class="container">
+													<div class="row">
+														<div class="booking-cta">
+															<h1>Make Your Reservation</h1>
+														</div>
+														<div class="booking-form">
+															<form>
+																<div class="col-md-8">
+																	<div class="form-group">
+																		<span class="form-label">Destination</span>
+																		<input class="form-control" type="text" placeholder="Enter Address, zip, city or airport">
+																	</div>
+																</div>
+																<div class="col-md-2">
+																	<div class="form-group">
+																		<span class="form-label">Guests</span>
+																		<select class="form-control">
+																			<option>1</option>
+																			<option>2</option>
+																			<option>3</option>
+																		</select>
+																		<span class="select-arrow"></span>
+																	</div>
+																</div>
+																<div class="col-md-2">
+																	<div class="form-group">
+																		<span class="form-label">Children</span>
+																		<select class="form-control">
+																			<option>0</option>
+																			<option>1</option>
+																			<option>2</option>
+																		</select>
+																		<span class="select-arrow"></span>
+																	</div>
+																</div>
+																<div class="col-md-4">
+																	<div class="form-group">
+																		<span class="form-label">Check In</span>
+																		<input class="form-control change" type="date" required>
+																	</div>
+																</div>
+																<div class="col-md-4">
+																	<div class="form-group">
+																		<span class="form-label">Check out</span>
+																		<input class="form-control change" type="date" required>
+																	</div>
+																</div>
+																<div class="col-md-4">
+																	<div class="form-btn">
+																		<button class="submit-btn" id="availability">Check availability</button>
+																	</div>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+									</div>
 
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Adventure</h2>
-							<p>It becomes difficult to control the crazy feet, who want to explore the world to live a new life.</p>
-							<div class="features">
-								<section>
-									<span class="image fit"><img src="images/Explore 0.jpg" alt="" /></span>
-									<span class="image fit"><img src="images/Explore 1.jpg" alt="" /></span>
-									<span class="image fit"><img src="images/Explore 2.jpg" alt="" /></span>
-									<span class="image fit"><img src="images/Explore 3.jpg" alt="" /></span>
-									<span class="image fit"><img src="images/Explore 4.jpg" alt="" /></span>
-									<span class="image fit"><img src="images/Explore 5.jpg" alt="" /></span>
-								</section>
+									<div id="reservation" class="reservation" style="display:none">
+											<span class="row">
+												<section class="colum">
+													<h4>Hotel: </h4>
+													<div id="hotel"> 
+														<li>Tesoro Los Cabos</li>
+														<li>Playa Grande Resort</li>
+														<li>Estanica Real Los Cabos</li>
+													</div>
+												</section>
+												<section class="colum">
+													<h4>Beds: </h4>
+													<div id="beds"> 
+														<li>3</li>
+														<li>3</li>
+														<li>4</li>
+													</div>
+												</section>
+												<section class="colum">
+													<h4>Price: </h4>
+													<div class="price">
+														<div>
+															<li>$250 /night</li>
+														</div> 
+														<div>
+															<li>$161 /night</li>
+														</div> 
+														<div>
+															<li>$67 /night</li>
+														</div> 
+													</div>
+												</section>
+											</span>
+									</div>
+								</div>
 							</div>
-							<ul class="actions">
-								<li><a href="Schedule.html" class="button">Explore</a></li>
-							</ul>
-						</div>
-					</section>
+						</section>
+	
 					<!-- Three -->
-					<section id="three" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Create an account</h2>
-							<p>Share your adventures, follow other adventurers, and start planning your next exploration!</p>
-							<div class="features">
-								
-							</div>
-							<ul class="actions">
-								<li>Explore</li>
-							</ul>
-						</div>
-					</section>
 					<section id="three" class="wrapper style3 fade-up">
 						<div class="inner" id="create">
 							<h2>Create an account</h2>
@@ -122,12 +275,12 @@
 								<input id="email" type="email" placeholder="email@email.com..." />
 								<input id="password" type="password" placeholder="password..." />
 							</div>
-							<button onclick="login()" >Sign In</button>
+							<button onclick="login()">Sign In</button>
 						</div>
 						<div class="inner" id="explore">
 							<h2>Welcome Travel Geek!</h2>
-							<p>You've been signed in!</p>
-							<button>Log Out</button>
+							<p>You've been signed in</p>
+							<button onclick="logout()">Log Out</button>
 							
 						</div>
 					</section>
@@ -143,6 +296,7 @@
 			</footer>
 
 		<!-- Scripts -->
+		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -151,8 +305,7 @@
 			<script src="assets/js/api.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 			<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-			<script src="logic.js" type="text/javascript"></script>
+			<script src="assets/js/logic.js" type="text/javascript"></script>
 	</body>
 </html>

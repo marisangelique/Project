@@ -1,6 +1,6 @@
-
+// Firebase 
 var config = {
-	apiKey: "AIzaSyD4Y5YtEbnB4aJuGLZAAWRnB7EomhTOeUI",
+	apiKey: "AIzaSyCa2AVuRCPIQc1cysRp5FN5aBr9lP8WSJw",
 	authDomain: "project1-ffd4b.firebaseapp.com",
 	databaseURL: "https://project1-ffd4b.firebaseio.com",
 	projectId: "project1-ffd4b",
@@ -12,23 +12,26 @@ firebase.initializeApp(config);
 
 var user = firebase.auth().currentUser;
 
-  if (user) {
-    // User is signed in.
-    $("#explore").show();
-    $("#create").hide();
+  firebase.auth().onAuthStateChanged(function(user) {
+      if(user){
+      $("#explore").show();
+      $("#create").hide();
     console.log("You are signed in!");
   } else {
     // No user is signed in.
     $("#explore").hide();
     $("#create").show();
     console.log("You are not signed in!");
-  };
+  }
+  });
 
 function login(){
   var username = $("#email").val();
   var password = $("#password").val();
 
-  firebase.auth().SignInWithEmailAndPassword(username, password).catch(function(error) {
+  console.log(username, password);
+
+  firebase.auth().signInWithEmailAndPassword(username, password).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -36,8 +39,45 @@ function login(){
     alert("Error: "+ errorMessage);
 
   });
-  
-  
 
 }
 
+function logout(){
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
+$('#showFlights').click(function (event) {
+  $("#booking").hide();
+  $("#results").show();
+});
+//   event.preventDefault();
+//   var firstDay = $("#firstDay").val();
+//   var lastDay = $("#lastDay").val();
+//   getRequest(searchTerm);
+// });
+// Open Sky Api
+
+    $('#availability').click(function (event) {
+        $("#bookingHotel").hide();
+        $("#reservation").show();
+        event.preventDefault();
+    });
+  
+
+// function getRequest(searchTerm) {
+  
+//   var flight = $("#startPoint");
+//   var beginTime = moment(firstDay).unix();
+//   var endTime = moment(lastDay).unix();
+
+//   var queryURL = 'https://USERNAME:PASSWORD@opensky-network.org/api/flights/departure?airport='+ flight + '&begin=' + beginTime + '&end=' + endTime;
+//   $.ajax({
+//     url: queryURL,
+//     method: "GET"
+//   }). then(function(response){
+    
+//   })
+// }

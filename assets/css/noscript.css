@@ -41,3 +41,22 @@
 		transform: none !important;
 		opacity: 1 !important;
 	}
+
+	h1, h2{
+		font-family: 'Staatliches', cursive;
+	}
+
+	p{
+		font-family: 'Raleway', sans-serif;
+	}
+
+	.change{
+		margin-top: 5px;
+		margin-bottom: 5px;
+		color: white;
+		border-style: solid;
+		border-width: .8px;
+		border-radius: 5px;
+		border-color: whitesmoke;
+		background: inherit;
+	}

@@ -3908,4 +3908,22 @@ p{
 	margin-top: -40px;
 }
 
+.column {
+	float: left;
+	width: 33.33%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+
+  .welcome{
+	  background: url("../../images/Hotel.jpg");
+	  background-position-y: -200px;
+	  background-blend-mode: darken;
+	  background-repeat: inherit;
+  }
 
