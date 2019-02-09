@@ -16,11 +16,15 @@ var user = firebase.auth().currentUser;
       if(user){
       $("#explore").show();
       $("#create").hide();
+      $("#explore1").show();
+      $("#create1").hide();
     console.log("You are signed in!");
   } else {
     // No user is signed in.
     $("#explore").hide();
     $("#create").show();
+    $("#explore1").hide();
+    $("#create1").show();
     console.log("You are not signed in!");
   }
   });
