@@ -7,26 +7,28 @@ var config = {
 	storageBucket: "project1-ffd4b.appspot.com",
 	messagingSenderId: "528726812532"
 };
-			
+
 firebase.initializeApp(config);
 
-firebase.auth().onAuthStateChanged(function(user) {
+var user = firebase.auth().currentUser;
+
   if (user) {
-    //User is signed in
+    // User is signed in.
     $("#explore").show();
     $("#create").hide();
+    console.log("You are signed in!");
   } else {
     // No user is signed in.
-    $("#explore").hide()
+    $("#explore").hide();
     $("#create").show();
-  }
-});
+    console.log("You are not signed in!");
+  };
 
 function login(){
   var username = $("#email").val();
   var password = $("#password").val();
 
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  firebase.auth().SignInWithEmailAndPassword(username, password).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
